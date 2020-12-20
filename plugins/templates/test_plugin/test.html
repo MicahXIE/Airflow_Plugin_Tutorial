@@ -1,0 +1,28 @@
+{% extends "airflow/master.html" %}
+
+{% block title %}Airflow - Test View Plugin{% endblock %}
+
+{% block head_css %}
+{{ super() }}
+
+{% endblock %}
+
+{% block body %}
+ {% if  rbac_authentication_enabled %}
+ {% block navbar %}
+        <header class="top" role="header">
+        {% include 'appbuilder/navbar.html' %}
+        </header>
+ {% endblock %}
+ {%endif%}
+
+<h1>Hello Airflow, Base View: {{ baseview }} </h1>
+
+<br/>
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+
+{% endblock %}
